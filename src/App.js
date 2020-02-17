@@ -7,11 +7,25 @@ class App extends React.Component {
   state = {
     earthquakeData: []
   };
+  fetchData = () => {
+    fetch(
+      "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=1"
+    )
+      .then(buffer => buffer.json())
+      .then(({ features }) => {
+        this.setState({ earthquakeData: features });
+      });
+  };
+
+  componentDidMount = () => {
+    this.fetchData();
+  };
+
   render() {
     return (
       <main>
         <Header />
-        <Map id="mapid"></Map>
+        <Map earthquakeData={this.state.earthquakeData}></Map>
       </main>
     );
   }
