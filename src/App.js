@@ -3,17 +3,19 @@ import "./App.css";
 import Header from "./components/Header";
 import Map from "./components/MapContainer";
 import Filter from "./components/Filter";
+import axios from "axios";
 
 class App extends React.Component {
   state = {
-    earthquakeData: []
+    earthquakeData: [],
+    isLoaded: false
   };
   fetchData = () => {
-    fetch(
-      "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=250"
-    )
-      .then(buffer => buffer.json())
-      .then(({ features }) => {
+    axios
+      .get(
+        "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=500"
+      )
+      .then(({ data: { features } }) => {
         const selectedData = features.map(quake => {
           return {
             magnitude: quake.properties.mag,
@@ -29,7 +31,7 @@ class App extends React.Component {
           };
         });
 
-        this.setState({ earthquakeData: selectedData });
+        this.setState({ earthquakeData: selectedData, isLoaded: true });
       });
   };
 
@@ -37,17 +39,52 @@ class App extends React.Component {
     this.fetchData();
   };
 
-  fetchFilteredData = () => {
-    console.log("fetching filtered data");
+  fetchFilteredData = (magnitude, time) => {
+    this.setState({ isLoaded: false }, () => {
+      axios
+        .get(
+          `https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=500`,
+          {
+            params: {
+              starttime: time,
+              minmagnitude: magnitude
+            }
+          }
+        )
+        .then(({ data: { features } }) => {
+          const selectedData = features.map(quake => {
+            return {
+              magnitude: quake.properties.mag,
+              place: quake.properties.place,
+              url: quake.properties.url,
+              time: quake.properties.time,
+              code: quake.properties.code,
+              position: [
+                quake.geometry.coordinates[1],
+                quake.geometry.coordinates[0]
+              ],
+              id: quake.id
+            };
+          });
+
+          this.setState({ earthquakeData: selectedData, isLoaded: true });
+        });
+    });
   };
 
   render() {
-    return (
+    console.log(this.state.isLoaded);
+    return this.state.isLoaded ? (
       <main>
         <Header />
         <Map earthquakeData={this.state.earthquakeData}></Map>
         <Filter fetchFilteredData={this.fetchFilteredData} />
       </main>
+    ) : (
+      <div>
+        <Header />
+        <p>Loading...</p>
+      </div>
     );
   }
 }

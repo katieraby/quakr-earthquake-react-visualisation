@@ -3,30 +3,37 @@ import React, { Component } from "react";
 class Filter extends Component {
   state = {
     magnitudeFilter: "",
-    timeFilter: ""
+    timeFilter: null
   };
 
   handleMagnitudeChange = event => {
-    // event.preventDefault();
-    //process to determine what startTime value to pass to filter
-
     console.log(event.target.value);
-  };
-  handleTimeChange = event => {
-    const now = new Date();
-    now.setHours(now.getHours() - event.target.value);
-    const startTime = now.toISOString();
-    this.setState({ timeFilter: startTime });
+    this.setState({ magnitudeFilter: event.target.value });
   };
 
-  componentDidUpdate(prevProps) {
-    console.log("here??");
-    if (this.state.timeFilter !== prevProps.timeFilter) {
+  handleTimeChange = event => {
+    console.log(event.target.value);
+    if (event.target.value === 30) {
+      const now = new Date();
+      now.setMonth(now.getMonth() - 1);
+      const startTime = now.toISOString();
+      console.log(startTime, "30 days log");
+      this.setState({ timeFilter: startTime });
+    } else {
+      const now = new Date();
+      now.setHours(now.getHours() - event.target.value);
+      const startTime = now.toISOString();
+      this.setState({ timeFilter: startTime });
+    }
+  };
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.timeFilter !== prevState.timeFilter) {
       this.props.fetchFilteredData(
         this.state.magnitudeFilter,
         this.state.timeFilter
       );
-    } else if (this.state.magnitudeFilter !== prevProps.magnitudeFilter) {
+    } else if (this.state.magnitudeFilter !== prevState.magnitudeFilter) {
       this.props.fetchFilteredData(
         this.state.magnitudeFilter,
         this.state.timeFilter
@@ -35,6 +42,7 @@ class Filter extends Component {
   }
 
   render() {
+    console.log(this.state.magnitudeFilter);
     return (
       <div className="filter">
         <h2>Filters</h2>
@@ -44,7 +52,8 @@ class Filter extends Component {
             <input
               type="radio"
               name="magnitude"
-              value="magAll"
+              value={-1}
+              checked={this.state.magnitudeFilter === -1}
               onChange={this.handleMagnitudeChange}
             />
             all
@@ -53,19 +62,19 @@ class Filter extends Component {
             <input
               type="radio"
               name="magnitude"
-              value="mag45below"
+              value={3.5}
               onChange={this.handleMagnitudeChange}
             />
-            {"<4.5"}
+            {">3.5"}
           </label>
           <label>
             <input
               type="radio"
               name="magnitude"
-              value="mag45above"
+              value={6}
               onChange={this.handleMagnitudeChange}
             />
-            {">4.5"}
+            {">6"}
           </label>
         </form>
         <form>
@@ -74,7 +83,7 @@ class Filter extends Component {
             <input
               type="radio"
               name="time"
-              value={0}
+              value={30}
               onChange={this.handleTimeChange}
             />
             all
