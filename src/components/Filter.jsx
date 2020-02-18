@@ -53,7 +53,7 @@ class Filter extends Component {
               type="radio"
               name="magnitude"
               value={-1}
-              checked={this.state.magnitudeFilter === -1}
+              checked={this.state.magnitudeFilter == -1}
               onChange={this.handleMagnitudeChange}
             />
             all
@@ -63,6 +63,7 @@ class Filter extends Component {
               type="radio"
               name="magnitude"
               value={3.5}
+              checked={this.state.magnitudeFilter == 3.5}
               onChange={this.handleMagnitudeChange}
             />
             {">3.5"}
@@ -72,6 +73,7 @@ class Filter extends Component {
               type="radio"
               name="magnitude"
               value={6}
+              checked={this.state.magnitudeFilter == 6}
               onChange={this.handleMagnitudeChange}
             />
             {">6"}
@@ -84,6 +86,7 @@ class Filter extends Component {
               type="radio"
               name="time"
               value={30}
+              checked={this.state.timeFilter == 30}
               onChange={this.handleTimeChange}
             />
             all
@@ -93,6 +96,7 @@ class Filter extends Component {
               type="radio"
               name="time"
               value={1}
+              checked={this.state.timeFilter == 1}
               onChange={this.handleTimeChange}
             />
             {"last hour"}
@@ -102,6 +106,7 @@ class Filter extends Component {
               type="radio"
               name="time"
               value={24}
+              checked={this.state.timeFilter == 24}
               onChange={this.handleTimeChange}
             />
             {"last 24 hours"}

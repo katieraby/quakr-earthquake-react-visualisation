@@ -74,17 +74,17 @@ class App extends React.Component {
 
   render() {
     console.log(this.state.isLoaded);
-    return this.state.isLoaded ? (
+    return (
       <main>
         <Header />
         <Map earthquakeData={this.state.earthquakeData}></Map>
         <Filter fetchFilteredData={this.fetchFilteredData} />
+        {this.state.isLoaded ? null : (
+          <div className="loadingScreen">
+            <h3>Loading...</h3>
+          </div>
+        )}
       </main>
-    ) : (
-      <div>
-        <Header />
-        <p>Loading...</p>
-      </div>
     );
   }
 }

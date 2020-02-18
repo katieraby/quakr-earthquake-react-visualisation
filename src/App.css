@@ -26,10 +26,36 @@ body {
 
 .filter {
   z-index: 2;
-  background-color: red;
+  background-color: var(--colorJazzberry);
   position: absolute;
-  top: 200px;
-  left: 45px;
+  top: 70px;
+  left: 0px;
+  font-family: "Helvetica", sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+.filter form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.loadingScreen {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(172, 195, 166, 0.5);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.loadingScreen h3 {
+  font-family: "Helvetica", sans-serif;
+  font-size: 46px;
+  text-align: center;
 }
 
 .leaflet-container {
