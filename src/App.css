@@ -28,16 +28,8 @@ body {
   z-index: 2;
   background-color: var(--colorJazzberry);
   position: absolute;
-  top: 70px;
-  left: 0px;
-  font-family: "Helvetica", sans-serif;
-  text-align: center;
-  padding: 20px;
-}
-.filter form {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  top: 100px;
+  left: 40px;
 }
 
 .loadingScreen {
@@ -46,7 +38,7 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(172, 195, 166, 0.5);
+  background-color: var(--colorCambridgeBlue);
   z-index: 10;
   display: flex;
   flex-direction: column;
