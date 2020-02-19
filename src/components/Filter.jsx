@@ -3,7 +3,8 @@ import React, { Component } from "react";
 class Filter extends Component {
   state = {
     magnitudeFilter: "",
-    timeFilter: null
+    timeFilter: null,
+    selectedTime: null
   };
 
   handleMagnitudeChange = event => {
@@ -18,12 +19,18 @@ class Filter extends Component {
       now.setMonth(now.getMonth() - 1);
       const startTime = now.toISOString();
       console.log(startTime, "30 days log");
-      this.setState({ timeFilter: startTime });
+      this.setState({
+        timeFilter: startTime,
+        selectedTime: event.target.value
+      });
     } else {
       const now = new Date();
       now.setHours(now.getHours() - event.target.value);
       const startTime = now.toISOString();
-      this.setState({ timeFilter: startTime });
+      this.setState({
+        timeFilter: startTime,
+        selectedTime: event.target.value
+      });
     }
   };
 
@@ -42,7 +49,7 @@ class Filter extends Component {
   }
 
   render() {
-    console.log(this.state.magnitudeFilter);
+    console.log(this.state.selectedTime);
     return (
       <div className="filter">
         <h2>Filters</h2>
@@ -86,7 +93,7 @@ class Filter extends Component {
               type="radio"
               name="time"
               value={30}
-              checked={this.state.timeFilter == 30}
+              checked={this.state.selectedTime == 30}
               onChange={this.handleTimeChange}
             />
             all
@@ -96,7 +103,7 @@ class Filter extends Component {
               type="radio"
               name="time"
               value={1}
-              checked={this.state.timeFilter == 1}
+              checked={this.state.selectedTime == 1}
               onChange={this.handleTimeChange}
             />
             {"last hour"}
@@ -106,7 +113,7 @@ class Filter extends Component {
               type="radio"
               name="time"
               value={24}
-              checked={this.state.timeFilter == 24}
+              checked={this.state.selectedTime == 24}
               onChange={this.handleTimeChange}
             />
             {"last 24 hours"}
