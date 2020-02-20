@@ -4,6 +4,8 @@ import Header from "./components/Header";
 import Map from "./components/MapContainer";
 import Filter from "./components/Filter";
 import axios from "axios";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Loader from "react-loader-spinner";
 
 class App extends React.Component {
   state = {
@@ -82,6 +84,13 @@ class App extends React.Component {
         {this.state.isLoaded ? null : (
           <div className="loadingScreen">
             <h3>Loading...</h3>
+            <Loader
+              className="spinner"
+              type="Plane"
+              color="rgba(244, 157, 110, 1)"
+              height={30}
+              width={30}
+            />
           </div>
         )}
       </main>

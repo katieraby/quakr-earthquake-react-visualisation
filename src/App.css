@@ -92,6 +92,11 @@ label {
   font-family: "Helvetica", sans-serif;
   font-size: 46px;
   text-align: center;
+  color: var(--colorSandyBrown);
+}
+
+.spinner {
+  text-align: center;
 }
 
 .leaflet-container {
