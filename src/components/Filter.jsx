@@ -8,7 +8,6 @@ class Filter extends Component {
   };
 
   handleMagnitudeChange = event => {
-    console.log(event.target.value);
     this.setState({ magnitudeFilter: event.target.value });
   };
 
@@ -18,7 +17,6 @@ class Filter extends Component {
       const now = new Date();
       now.setMonth(now.getMonth() - 1);
       const startTime = now.toISOString();
-      console.log(startTime, "30 days log");
       this.setState({
         timeFilter: startTime,
         selectedTime: event.target.value
@@ -49,12 +47,11 @@ class Filter extends Component {
   }
 
   render() {
-    console.log(this.state.selectedTime);
     return (
       <div className="filter">
-        <h2>Filters</h2>
+        <h2 className="filter__h2">Filters</h2>
         <form>
-          <h3>Magnitude</h3>
+          <h3 className="filter__h3">Magnitude</h3>
           <label>
             <input
               type="radio"
@@ -63,7 +60,7 @@ class Filter extends Component {
               checked={this.state.magnitudeFilter == -1}
               onChange={this.handleMagnitudeChange}
             />
-            all
+            All
           </label>
           <label>
             <input
@@ -73,7 +70,7 @@ class Filter extends Component {
               checked={this.state.magnitudeFilter == 3.5}
               onChange={this.handleMagnitudeChange}
             />
-            {">3.5"}
+            {"> 3.5"}
           </label>
           <label>
             <input
@@ -83,11 +80,11 @@ class Filter extends Component {
               checked={this.state.magnitudeFilter == 6}
               onChange={this.handleMagnitudeChange}
             />
-            {">6"}
+            {"> 6"}
           </label>
         </form>
         <form>
-          <h3>Time</h3>
+          <h3 className="filter__h3">Time</h3>
           <label>
             <input
               type="radio"
@@ -96,7 +93,7 @@ class Filter extends Component {
               checked={this.state.selectedTime == 30}
               onChange={this.handleTimeChange}
             />
-            all
+            All
           </label>
           <label>
             <input
@@ -106,7 +103,7 @@ class Filter extends Component {
               checked={this.state.selectedTime == 1}
               onChange={this.handleTimeChange}
             />
-            {"last hour"}
+            {"Last Hour"}
           </label>
           <label>
             <input
@@ -116,7 +113,7 @@ class Filter extends Component {
               checked={this.state.selectedTime == 24}
               onChange={this.handleTimeChange}
             />
-            {"last 24 hours"}
+            {"Last 24 Hours"}
           </label>
         </form>
       </div>
