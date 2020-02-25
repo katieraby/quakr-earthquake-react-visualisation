@@ -75,7 +75,6 @@ class App extends React.Component {
   };
 
   render() {
-    console.log(this.state.isLoaded);
     return (
       <main>
         <Header />
@@ -83,7 +82,7 @@ class App extends React.Component {
         <Filter fetchFilteredData={this.fetchFilteredData} />
         {this.state.isLoaded ? null : (
           <div className="loadingScreen">
-            <h3>Loading...</h3>
+            <h3 className="loadingScreen__h3">Loading...</h3>
             <Loader
               className="spinner"
               type="Plane"

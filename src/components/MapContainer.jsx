@@ -15,10 +15,15 @@ class MapContainer extends Component {
           return (
             <Marker key={quake.id} position={quake.position} icon={newIcon}>
               <Popup>
-                {new Date(quake.time).toUTCString()}
+                <span className="popup__span">
+                  {new Date(quake.time).toUTCString()}
+                </span>
                 <br />
-                {`${quake.magnitude} magnitude earthquake, situated ${quake.place}. Find out more `}
-                <a href={quake.url}>here</a>.
+                {`${quake.magnitude} magnitude earthquake, situated ${quake.place}. Find the details `}
+                <a className="popup__a" href={quake.url}>
+                  here
+                </a>
+                .
               </Popup>
             </Marker>
           );
