@@ -9,7 +9,7 @@ body {
 
 .header {
   width: 100%;
-  opacity: 95%;
+  opacity: 100%;
   background-color: var(--colorJazzberry);
   position: absolute;
   top: 0;
@@ -164,7 +164,7 @@ label {
 }
 
 .leaflet-container {
-  z-index: -1;
+  z-index: 0;
   height: 100vh;
   width: 100vw;
 }
