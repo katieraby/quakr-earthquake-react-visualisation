@@ -9,7 +9,7 @@ class MapContainer extends Component {
       iconSize: [20, 30]
     });
     return (
-      <LeafletMap center={[40, 0]} zoom={1.5}>
+      <LeafletMap center={[40, 0]} zoom={1.7}>
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
         {this.props.earthquakeData.map(quake => {
           return (
