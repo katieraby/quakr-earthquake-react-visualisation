@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "aa10a5f73662bf7b0a8454948dff1b57",
+    "revision": "1b960a8e450a06f39e5bfb19d5e0573c",
     "url": "/quakr-earthquake-react-visualisation/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/quakr-earthquake-react-visualisation/static/css/2.f5298653.chunk.css"
   },
   {
-    "revision": "31cd6671dda2a93f3bfb",
-    "url": "/quakr-earthquake-react-visualisation/static/css/main.925d39af.chunk.css"
+    "revision": "d53926c4f8d0e2c12430",
+    "url": "/quakr-earthquake-react-visualisation/static/css/main.fd460ecb.chunk.css"
   },
   {
     "revision": "c8b13663fc47e9f7a517",
@@ -20,7 +20,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/quakr-earthquake-react-visualisation/static/js/2.535c8b28.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "31cd6671dda2a93f3bfb",
+    "revision": "d53926c4f8d0e2c12430",
     "url": "/quakr-earthquake-react-visualisation/static/js/main.82a4d7f6.chunk.js"
   },
   {

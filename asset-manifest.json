@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/quakr-earthquake-react-visualisation/static/css/main.925d39af.chunk.css",
+    "main.css": "/quakr-earthquake-react-visualisation/static/css/main.fd460ecb.chunk.css",
     "main.js": "/quakr-earthquake-react-visualisation/static/js/main.82a4d7f6.chunk.js",
     "main.js.map": "/quakr-earthquake-react-visualisation/static/js/main.82a4d7f6.chunk.js.map",
     "runtime-main.js": "/quakr-earthquake-react-visualisation/static/js/runtime-main.b2f8c3b4.js",
@@ -9,17 +9,17 @@
     "static/js/2.535c8b28.chunk.js": "/quakr-earthquake-react-visualisation/static/js/2.535c8b28.chunk.js",
     "static/js/2.535c8b28.chunk.js.map": "/quakr-earthquake-react-visualisation/static/js/2.535c8b28.chunk.js.map",
     "index.html": "/quakr-earthquake-react-visualisation/index.html",
-    "precache-manifest.138d037df67f7cdd8b9c0eb82c8a0bf2.js": "/quakr-earthquake-react-visualisation/precache-manifest.138d037df67f7cdd8b9c0eb82c8a0bf2.js",
+    "precache-manifest.fe759d37489e0402d1124e54b6e707fd.js": "/quakr-earthquake-react-visualisation/precache-manifest.fe759d37489e0402d1124e54b6e707fd.js",
     "service-worker.js": "/quakr-earthquake-react-visualisation/service-worker.js",
     "static/css/2.f5298653.chunk.css.map": "/quakr-earthquake-react-visualisation/static/css/2.f5298653.chunk.css.map",
-    "static/css/main.925d39af.chunk.css.map": "/quakr-earthquake-react-visualisation/static/css/main.925d39af.chunk.css.map",
+    "static/css/main.fd460ecb.chunk.css.map": "/quakr-earthquake-react-visualisation/static/css/main.fd460ecb.chunk.css.map",
     "static/js/2.535c8b28.chunk.js.LICENSE.txt": "/quakr-earthquake-react-visualisation/static/js/2.535c8b28.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.b2f8c3b4.js",
     "static/css/2.f5298653.chunk.css",
     "static/js/2.535c8b28.chunk.js",
-    "static/css/main.925d39af.chunk.css",
+    "static/css/main.fd460ecb.chunk.css",
     "static/js/main.82a4d7f6.chunk.js"
   ]
 }
