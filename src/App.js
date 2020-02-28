@@ -85,10 +85,8 @@ class App extends React.Component {
             <h3 className="loadingScreen__h3">Loading...</h3>
             <Loader
               className="spinner"
-              type="Plane"
+              type="Circles"
               color="rgba(244, 157, 110, 1)"
-              height={30}
-              width={30}
             />
           </div>
         )}

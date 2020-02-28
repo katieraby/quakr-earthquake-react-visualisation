@@ -53,7 +53,6 @@ class Filter extends Component {
   }
 
   render() {
-    console.log(this.state.isFilterOpen);
     return (
       <>
         <div className="filter">

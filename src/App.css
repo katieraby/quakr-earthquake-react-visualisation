@@ -9,14 +9,12 @@ body {
 
 .header {
   width: 100%;
-  opacity: 100%;
+  position: relative;
+  padding: 15px 0px;
+  display: block;
   background-color: var(--colorJazzberry);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
   z-index: 1;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }
 
 .header__h1 {
@@ -26,46 +24,16 @@ body {
   font-size: 36px;
   letter-spacing: 0.1rem;
   margin-bottom: -10px;
-}
-
-.tracking-in-contract {
-  -webkit-animation: tracking-in-contract 0.8s
-    cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s both;
-  animation: tracking-in-contract 3s cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s
-    both;
-}
-
-@-webkit-keyframes tracking-in-contract {
-  0% {
-    letter-spacing: 1em;
-    opacity: 0;
-  }
-  40% {
-    opacity: 0.6;
-  }
-  100% {
-    letter-spacing: normal;
-    opacity: 1;
-  }
-}
-@keyframes tracking-in-contract {
-  0% {
-    letter-spacing: 1em;
-    opacity: 0;
-  }
-  40% {
-    opacity: 0.6;
-  }
-  100% {
-    letter-spacing: normal;
-    opacity: 1;
-  }
+  margin-top: 0px;
+  padding-top: 6px;
 }
 
 .header__p {
   color: white;
   text-align: center;
   font-family: "Open Sans", sans-serif;
+  margin-bottom: 6px;
+  padding-bottom: 0px;
 }
 
 .filter {
@@ -135,7 +103,6 @@ label {
   left: 0;
   right: 0;
   background-color: var(--colorPeachPuff);
-  opacity: 85%;
   z-index: 10;
   display: flex;
   flex-direction: column;
@@ -176,14 +143,19 @@ label {
 }
 
 .leaflet-control {
+  z-index: 1;
   left: 30px;
-  bottom: -85vh;
+  top: 70vh;
+}
+
+.leaflet-control-zoom a {
+  padding: 2px;
 }
 
 @media only screen and (max-width: 640px) {
   .leaflet-control {
     left: 30px;
-    bottom: -74vh;
+    top: 60vh;
   }
 
   .filter {
