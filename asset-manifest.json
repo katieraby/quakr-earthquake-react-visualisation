@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/quakr-earthquake-react-visualisation/static/css/main.96278ffd.chunk.css",
-    "main.js": "/quakr-earthquake-react-visualisation/static/js/main.a00105db.chunk.js",
-    "main.js.map": "/quakr-earthquake-react-visualisation/static/js/main.a00105db.chunk.js.map",
+    "main.css": "/quakr-earthquake-react-visualisation/static/css/main.9f2534da.chunk.css",
+    "main.js": "/quakr-earthquake-react-visualisation/static/js/main.d080ef2b.chunk.js",
+    "main.js.map": "/quakr-earthquake-react-visualisation/static/js/main.d080ef2b.chunk.js.map",
     "runtime-main.js": "/quakr-earthquake-react-visualisation/static/js/runtime-main.b2f8c3b4.js",
     "runtime-main.js.map": "/quakr-earthquake-react-visualisation/static/js/runtime-main.b2f8c3b4.js.map",
     "static/css/2.f5298653.chunk.css": "/quakr-earthquake-react-visualisation/static/css/2.f5298653.chunk.css",
     "static/js/2.535c8b28.chunk.js": "/quakr-earthquake-react-visualisation/static/js/2.535c8b28.chunk.js",
     "static/js/2.535c8b28.chunk.js.map": "/quakr-earthquake-react-visualisation/static/js/2.535c8b28.chunk.js.map",
     "index.html": "/quakr-earthquake-react-visualisation/index.html",
-    "precache-manifest.4405afe1811276f4661863fb0a19113d.js": "/quakr-earthquake-react-visualisation/precache-manifest.4405afe1811276f4661863fb0a19113d.js",
+    "precache-manifest.6351b3563679d6b53f6c0a029dabf176.js": "/quakr-earthquake-react-visualisation/precache-manifest.6351b3563679d6b53f6c0a029dabf176.js",
     "service-worker.js": "/quakr-earthquake-react-visualisation/service-worker.js",
     "static/css/2.f5298653.chunk.css.map": "/quakr-earthquake-react-visualisation/static/css/2.f5298653.chunk.css.map",
-    "static/css/main.96278ffd.chunk.css.map": "/quakr-earthquake-react-visualisation/static/css/main.96278ffd.chunk.css.map",
+    "static/css/main.9f2534da.chunk.css.map": "/quakr-earthquake-react-visualisation/static/css/main.9f2534da.chunk.css.map",
     "static/js/2.535c8b28.chunk.js.LICENSE.txt": "/quakr-earthquake-react-visualisation/static/js/2.535c8b28.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.b2f8c3b4.js",
     "static/css/2.f5298653.chunk.css",
     "static/js/2.535c8b28.chunk.js",
-    "static/css/main.96278ffd.chunk.css",
-    "static/js/main.a00105db.chunk.js"
+    "static/css/main.9f2534da.chunk.css",
+    "static/js/main.d080ef2b.chunk.js"
   ]
 }
