@@ -6,12 +6,21 @@ class MapContainer extends Component {
   render() {
     const newIcon = new Icon({
       iconUrl: require("../marker-icon-2x-gold.png"),
-      iconSize: [20, 30]
+      iconSize: [20, 30],
     });
     return (
-      <LeafletMap center={[40, 0]} zoom={1.7}>
+      <LeafletMap
+        center={[35, -40]}
+        zoom={3}
+        minZoom="2.5"
+        maxBounds={[
+          [90, 180],
+          [-90, -180],
+        ]}
+        scrollWheelZoom={false}
+      >
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-        {this.props.earthquakeData.map(quake => {
+        {this.props.earthquakeData.map((quake) => {
           return (
             <Marker key={quake.id} position={quake.position} icon={newIcon}>
               <Popup>

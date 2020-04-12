@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import Header from "./components/Header";
-import Map from "./components/MapContainer";
+import MapContainer from "./components/MapContainer";
 import Filter from "./components/Filter";
 import axios from "axios";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
@@ -10,7 +10,7 @@ import Loader from "react-loader-spinner";
 class App extends React.Component {
   state = {
     earthquakeData: [],
-    isLoaded: false
+    isLoaded: false,
   };
   fetchData = () => {
     axios
@@ -18,7 +18,7 @@ class App extends React.Component {
         "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=500"
       )
       .then(({ data: { features } }) => {
-        const selectedData = features.map(quake => {
+        const selectedData = features.map((quake) => {
           return {
             magnitude: quake.properties.mag,
             place: quake.properties.place,
@@ -27,9 +27,9 @@ class App extends React.Component {
             code: quake.properties.code,
             position: [
               quake.geometry.coordinates[1],
-              quake.geometry.coordinates[0]
+              quake.geometry.coordinates[0],
             ],
-            id: quake.id
+            id: quake.id,
           };
         });
 
@@ -49,12 +49,12 @@ class App extends React.Component {
           {
             params: {
               starttime: time,
-              minmagnitude: magnitude
-            }
+              minmagnitude: magnitude,
+            },
           }
         )
         .then(({ data: { features } }) => {
-          const selectedData = features.map(quake => {
+          const selectedData = features.map((quake) => {
             return {
               magnitude: quake.properties.mag,
               place: quake.properties.place,
@@ -63,9 +63,9 @@ class App extends React.Component {
               code: quake.properties.code,
               position: [
                 quake.geometry.coordinates[1],
-                quake.geometry.coordinates[0]
+                quake.geometry.coordinates[0],
               ],
-              id: quake.id
+              id: quake.id,
             };
           });
 
@@ -76,10 +76,14 @@ class App extends React.Component {
 
   render() {
     return (
-      <main>
-        <Header />
-        <Map earthquakeData={this.state.earthquakeData}></Map>
-        <Filter fetchFilteredData={this.fetchFilteredData} />
+      <main className="main">
+        <div className="header-container">
+          <Header />
+        </div>
+        <div className="map-container-main">
+          <MapContainer earthquakeData={this.state.earthquakeData} />
+          <Filter fetchFilteredData={this.fetchFilteredData} />
+        </div>
         {this.state.isLoaded ? null : (
           <div className="loadingScreen">
             <h3 className="loadingScreen__h3">Loading...</h3>
